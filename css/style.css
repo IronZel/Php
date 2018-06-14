@@ -1,0 +1,38 @@
+.selector-for-some-widget {
+  box-sizing: content-box;
+}
+
+.kn1 {
+    position: absolute;
+    left: 70%;
+    top: 20%;
+}
+
+.logo {
+    margin:0 40% 0 40%;
+    width:20%;
+}
+
+.kab {
+    margin-top: 1%;
+    width: 10%
+}
+
+.kab_tx {
+    position: absolute;
+        left: 3%;
+}
+.kab_search {
+    
+}
+.str_perecl {
+  margin-left: 0%
+}
+
+.rab_obl {
+    margin-top: 2%;
+    margin-left: 15%;
+}
+.save_btn {
+    margin-left: 32%;
+}
