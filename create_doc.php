@@ -14,39 +14,29 @@
 
                 <header class="header">
                         <strong></strong>
-                        <!---меню--->      
+                             
           
           <?php
+		    //-----------Меню и подключение к БД-------------
             include 'menu.php';
-          
             include 'settings.php';
+			//-----------Меню и подключение к БД-------------
+			
+			//----------------Запрос----------------------
+            $query = mysqli_query($connect, 'SELECT `name`, `date_accept`, `date_entry` FROM `documents` order by `docID` DESC');
 
-            $query = "select doc_id, name from documents";
-            $result = mysql_query($query);
-            //mysqli_query($link, $query);
-            if (!$result) {
+			while($row = mysqli_fetch_assoc($query) ) {
+			echo "<br>$row[name] $row[date_accept] $row[date_entry]";
+			}
+            if (!$query) {
                 $message  = 'Nevernyi zapros: ' . mysql_error() . "\n";
                 $message .= 'Zapros celyi: ' . $query;
                 die($message);
             }
+			//----------------Запрос----------------------
             ?>
-                        <table>                                                    
-                            <?php
-            while ($row = mysql_fetch_assoc($result, MYSQL_ASSOC)) {?>
-                            <tr>
-                                <?php    
-                echo '<td><a href="view_doc.php?doc_id='.$row['doc_id'].'">просмотреть</a>';
-                echo '<td>'.$row['name'].'</td>';
-                
-            ?>
-                            </tr>
-                <?php    
 
-}
-            //echo mysql_result($result, 0); // выведет имя третьего сотрудника
-            //print($myResult);
-            ?>
-                        </table>
+
         </header> 
 
                 <main class="content">
