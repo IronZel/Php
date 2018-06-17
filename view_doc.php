@@ -14,7 +14,38 @@
           
           <?php
             include 'menu.php';
-          ?>  
+            $id = $_GET['doc_id'];
+            include 'settings.php';
+            $query = "select name, date_accept, date_entry from documents where doc_id = '".$id."'";
+            $result = mysql_query($query);
+            //mysqli_query($link, $query);
+            if (!$result) {
+                $message  = 'Nevernyi zapros: ' . mysql_error() . "\n";
+                $message .= 'Zapros celyi: ' . $query;
+                die($message);
+            }
+            ?>
+                                                                          
+                            <?php
+            while ($row = mysql_fetch_assoc($result, MYSQL_ASSOC)) {?>
+                            
+                                <?php    
+                //echo '<td><a href="view_doc.php?doc_id='.$row['doc_id'].'">просмотреть</a>';
+                echo $row['name'].'<br/>';
+                echo $row['date_accept'].'<br/>';
+                echo $row['date_entry'].'<br/>';
+                
+            ?>
+                           
+                <?php    
+
+}
+            //echo mysql_result($result, 0); // выведет имя третьего сотрудника
+            //print($myResult);
+            ?>
+            
+            
+          
         
         
                 <!-- Image and text -->
