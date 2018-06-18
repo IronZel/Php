@@ -1,4 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<header class="header">
+        <strong></strong>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
           <a class="navbar-brand" href="#">Меню</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -31,4 +33,5 @@
             <input class="form-control mr-sm-2" type="search" placeholder="поиск по сайту" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Начать</button>
           </form>
-        </nav> 
+        </nav>
+</header>

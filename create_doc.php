@@ -23,9 +23,11 @@
 			//-----------Меню и подключение к БД-------------
 			
 			//----------------Запрос----------------------
-            $query = mysqli_query($connect, 'SELECT `name`, `date_accept`, `date_entry` FROM `documents` order by `docID` DESC');
-
-			while($row = mysqli_fetch_assoc($query) ) {
+            $query = 'SELECT `name`, `date_accept`, `date_entry` FROM `documents` order by `doc_id` DESC';
+            $result = mysqli_query($connect, $query);
+            //$row = mysqli_fetch_assoc($result) ;
+            //print_r($row);
+			while($row = mysqli_fetch_assoc($result)) {
 			echo "<br>$row[name] $row[date_accept] $row[date_entry]";
 			}
             if (!$query) {
